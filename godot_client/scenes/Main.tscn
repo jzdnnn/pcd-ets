@@ -1,0 +1,331 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7qxvh8y3dfwu"]
+
+[ext_resource type="Script" path="res://scripts/UDPReceiver.gd" id="1_1"]
+[ext_resource type="Script" path="res://scripts/VideoDisplay.gd" id="2_1"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Virtual Mustache Try-On"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VideoContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VideoMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/VideoContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VideoDisplay" type="TextureRect" parent="MarginContainer/VBoxContainer/VideoContainer/VideoMargin"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_1")
+
+[node name="StatusBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ConnectionStatus" type="HBoxContainer" parent="MarginContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ConnectionLabel" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/ConnectionStatus"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Status:"
+
+[node name="ConnectionValue" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/ConnectionStatus"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "Disconnected"
+
+[node name="FaceCount" type="HBoxContainer" parent="MarginContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FaceLabel" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/FaceCount"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Faces:"
+
+[node name="FaceValue" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/FaceCount"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="FPS" type="HBoxContainer" parent="MarginContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="FPSLabel" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/FPS"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "FPS:"
+
+[node name="FPSValue" type="Label" parent="MarginContainer/VBoxContainer/StatusBar/FPS"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControlPanel" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/ControlPanel"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "▶ Start"
+
+[node name="StopButton" type="Button" parent="MarginContainer/VBoxContainer/ControlPanel"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "⏹ Stop"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/ControlPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MustacheLabel" type="Label" parent="MarginContainer/VBoxContainer/ControlPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mustache:"
+vertical_alignment = 1
+
+[node name="MustacheSelector" type="OptionButton" parent="MarginContainer/VBoxContainer/ControlPanel"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="SettingsLabel" type="Label" parent="MarginContainer/VBoxContainer/ControlPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Port:"
+vertical_alignment = 1
+
+[node name="PortInput" type="LineEdit" parent="MarginContainer/VBoxContainer/ControlPanel"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "5005"
+placeholder_text = "5005"
+alignment = 1
+
+[node name="ParametersPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ParametersMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/ParametersPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="ParametersVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ParametersTitle" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fine Tuning Parameters"
+horizontal_alignment = 1
+
+[node name="ScaleFactorBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ScaleFactorLabel" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/ScaleFactorBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Scale Factor:"
+vertical_alignment = 1
+
+[node name="ScaleFactorSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/ScaleFactorBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.05
+max_value = 2.0
+step = 0.05
+value = 1.2
+
+[node name="ScaleFactorValue" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/ScaleFactorBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "1.20"
+horizontal_alignment = 2
+
+[node name="MinNeighborsBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MinNeighborsLabel" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MinNeighborsBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Min Neighbors:"
+vertical_alignment = 1
+
+[node name="MinNeighborsSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MinNeighborsBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 10.0
+value = 5.0
+
+[node name="MinNeighborsValue" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MinNeighborsBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "5"
+horizontal_alignment = 2
+
+[node name="MustacheScaleBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MustacheScaleLabel" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheScaleBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mustache Scale:"
+vertical_alignment = 1
+
+[node name="MustacheScaleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheScaleBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 3.0
+step = 0.05
+value = 0.8
+
+[node name="MustacheScaleValue" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheScaleBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "0.80"
+horizontal_alignment = 2
+
+[node name="MustacheYOffsetBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="MustacheYOffsetLabel" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheYOffsetBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mustache Y Offset:"
+vertical_alignment = 1
+
+[node name="MustacheYOffsetSlider" type="HSlider" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheYOffsetBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.57
+
+[node name="MustacheYOffsetValue" type="Label" parent="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheYOffsetBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "0.57"
+horizontal_alignment = 2
+
+[node name="UDPReceiver" type="Node" parent="."]
+script = ExtResource("1_1")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ControlPanel/StartButton" to="UDPReceiver" method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ControlPanel/StopButton" to="UDPReceiver" method="_on_stop_pressed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/ControlPanel/MustacheSelector" to="UDPReceiver" method="_on_mustache_selected"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/ScaleFactorBox/ScaleFactorSlider" to="UDPReceiver" method="_on_scale_factor_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MinNeighborsBox/MinNeighborsSlider" to="UDPReceiver" method="_on_min_neighbors_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheScaleBox/MustacheScaleSlider" to="UDPReceiver" method="_on_mustache_scale_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/ParametersPanel/ParametersMargin/ParametersVBox/MustacheYOffsetBox/MustacheYOffsetSlider" to="UDPReceiver" method="_on_mustache_y_offset_changed"]
+[connection signal="data_received" from="UDPReceiver" to="MarginContainer/VBoxContainer/VideoContainer/VideoMargin/VideoDisplay" method="_on_udp_data_received"]

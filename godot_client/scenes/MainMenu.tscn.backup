@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8qxvh8y3dfwx"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mainmenu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mainmenu")
+
+[node name="BackgroundContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundImage" type="TextureRect" parent="BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackgroundOverlay" type="ColorRect" parent="BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSpace" type="Control" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+
+[node name="RightSide" type="CenterContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuPanel" type="VBoxContainer" parent="MainContainer/RightSide"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Spacer2" type="Control" parent="MainContainer/RightSide/MenuPanel"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="MainContainer/RightSide/MenuPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "Version 1.0 - SVM + ORB + Haar Cascade"
+horizontal_alignment = 1
+
+[node name="CenterContainer_MenuPanel#TitleContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CenterContainer_MenuPanel_TitleContainer#AppTitle" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 56
+text = "MUSTACHE FILTER"
+horizontal_alignment = 1
+
+[node name="CenterContainer_MenuPanel_TitleContainer#AppSubtitle" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "Real-time Face Detection & Mustache Overlay"
+horizontal_alignment = 1
+
+[node name="CenterContainer_MenuPanel#Spacer1" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+anchors_preset = 0
+
+[node name="CenterContainer_MenuPanel#ButtonsContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MainContainer_RightSide_MenuPanel_ButtonsContainer#StartButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "MULAI"
+
+[node name="MainContainer_RightSide_MenuPanel_ButtonsContainer#HelpButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "BANTUAN"
+
+[node name="MainContainer_RightSide_MenuPanel_ButtonsContainer#AboutButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "TENTANG KAMI"
+
+[node name="MainContainer_RightSide_MenuPanel_ButtonsContainer#ExitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.3, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.2, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "KELUAR"

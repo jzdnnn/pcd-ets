@@ -1,0 +1,206 @@
+[gd_scene load_steps=2 format=3 uid="uid://fc3bgcqi5j57"]
+
+[ext_resource type="Script" path="res://scripts/Help.gd" id="1_help"]
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_help")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TitleBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/TitleBar"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "← KEMBALI"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "BANTUAN"
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HelpContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="IntroLabel" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Selamat datang di Mustache Virtual Try-on! Aplikasi ini menggunakan teknologi Computer Vision untuk mendeteksi wajah secara real-time dan menambahkan filter kumis."
+autowrap_mode = 3
+
+[node name="Separator1" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+
+[node name="Section1Title" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Cara Menggunakan:"
+
+[node name="Step1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "1. Pastikan server Python sudah berjalan (python server_udp.py)"
+autowrap_mode = 3
+
+[node name="Step2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "2. Klik tombol 'Start' untuk memulai koneksi dan menerima video stream"
+autowrap_mode = 3
+
+[node name="Step3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "3. Pilih style kumis dari dropdown menu"
+autowrap_mode = 3
+
+[node name="Step4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "4. Sesuaikan parameter fine tuning menggunakan slider untuk hasil optimal"
+autowrap_mode = 3
+
+[node name="Step5" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "5. Klik tombol 'Stop' untuk menghentikan koneksi"
+autowrap_mode = 3
+
+[node name="Separator2" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+
+[node name="Section2Title" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Parameter Fine Tuning:"
+
+[node name="Param1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Scale Factor (1.05-2.0): Mengatur sensitivitas deteksi wajah. Nilai lebih kecil = lebih sensitif tetapi lebih lambat."
+autowrap_mode = 3
+
+[node name="Param2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Min Neighbors (1-10): Threshold confidence untuk deteksi. Nilai lebih tinggi = lebih ketat/akurat."
+autowrap_mode = 3
+
+[node name="Param3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Mustache Scale (0.1-3.0): Mengatur ukuran kumis relatif terhadap wajah."
+autowrap_mode = 3
+
+[node name="Param4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Mustache Y Offset (0.0-1.0): Mengatur posisi vertikal kumis pada wajah."
+autowrap_mode = 3
+
+[node name="Separator3" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+
+[node name="Section3Title" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tips:"
+
+[node name="Tip1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Pastikan pencahayaan cukup untuk deteksi wajah yang optimal"
+autowrap_mode = 3
+
+[node name="Tip2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Posisikan wajah menghadap kamera secara frontal"
+autowrap_mode = 3
+
+[node name="Tip3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/HelpContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Sesuaikan parameter jika kumis tidak terdeteksi dengan baik"
+autowrap_mode = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TitleBar/BackButton" to="." method="_on_back_button_pressed"]

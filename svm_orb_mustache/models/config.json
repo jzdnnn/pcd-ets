@@ -1,0 +1,46 @@
+{
+  "orb_features": 500,
+  "bovw_k": 256,
+  "svm_kernel": "linear",
+  "best_params": {
+    "C": 0.1
+  },
+  "dataset_stats": {
+    "total": 13433,
+    "train": 9403,
+    "val": 2015,
+    "test": 2015,
+    "train_pos": 9263,
+    "train_neg": 140,
+    "val_pos": 1985,
+    "val_neg": 30,
+    "test_pos": 1985,
+    "test_neg": 30
+  },
+  "train_results": {
+    "best_params": {
+      "C": 0.1
+    },
+    "best_cv_f1": 0.9918224741783968,
+    "train": {
+      "accuracy": 0.9912793789216208,
+      "precision": 0.991540850198094,
+      "recall": 0.9996761308431393,
+      "f1": 0.9955918718417375
+    },
+    "val": {
+      "accuracy": 0.9831265508684863,
+      "precision": 0.9855649576903932,
+      "recall": 0.9974811083123426,
+      "f1": 0.9914872308462694
+    }
+  },
+  "test_results": {
+    "accuracy": 0.9856079404466501,
+    "precision": 0.989,
+    "recall": 0.9964735516372796,
+    "f1": 0.9927227101631116,
+    "roc_auc": 0.886465155331654
+  },
+  "random_seed": 42
+}

@@ -1,0 +1,168 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8qxvh8y3dfwx"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mainmenu"]
+[ext_resource type="Texture2D" uid="uid://ce1ct3rwkpba4" path="res://scenes/menu_bg.png" id="2_8gp4y"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mainmenu")
+
+[node name="BackgroundContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundImage" type="TextureRect" parent="BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -98.0
+offset_right = 183.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8gp4y")
+stretch_mode = 6
+
+[node name="BackgroundOverlay" type="ColorRect" parent="BackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="TitleContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 250.0
+grow_horizontal = 2
+
+[node name="TitleVBox" type="VBoxContainer" parent="TitleContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AppTitle" type="Label" parent="TitleContainer/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 56
+text = "MUSTACHE VIRTUAL TRY-ON"
+horizontal_alignment = 1
+
+[node name="AppSubtitle" type="Label" parent="TitleContainer/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "Real-time Face Detection & Mustache Overlay"
+horizontal_alignment = 1
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftSpace" type="Control" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+
+[node name="RightSide" type="CenterContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuPanel" type="VBoxContainer" parent="MainContainer/RightSide"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Spacer1" type="Control" parent="MainContainer/RightSide/MenuPanel"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MainContainer/RightSide/MenuPanel"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="MainContainer/RightSide/MenuPanel/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "MULAI"
+
+[node name="HelpButton" type="Button" parent="MainContainer/RightSide/MenuPanel/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "BANTUAN"
+
+[node name="AboutButton" type="Button" parent="MainContainer/RightSide/MenuPanel/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.2, 0.8, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "TENTANG KAMI"
+
+[node name="ExitButton" type="Button" parent="MainContainer/RightSide/MenuPanel/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.3, 0.3, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.2, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "KELUAR"
+
+[node name="TeamInfoContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -103.0
+offset_right = -2.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TeamInfo" type="Label" parent="TeamInfoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "STDev - D4 Teknik Informatika
+Politeknik Negeri Bandung
+2025"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MainContainer/RightSide/MenuPanel/ButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainContainer/RightSide/MenuPanel/ButtonsContainer/HelpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="MainContainer/RightSide/MenuPanel/ButtonsContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="MainContainer/RightSide/MenuPanel/ButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]

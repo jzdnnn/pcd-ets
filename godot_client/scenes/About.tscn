@@ -1,0 +1,227 @@
+[gd_scene load_steps=2 format=3 uid="uid://5c3bgcqi5j58"]
+
+[ext_resource type="Script" path="res://scripts/About.gd" id="1_about"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_about")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TitleBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/TitleBar"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "← KEMBALI"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "TENTANG KAMI"
+vertical_alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/TitleBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="AboutContent" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ProjectTitle" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 32
+text = "MUSTACHE VIRTUAL TRY-ON"
+horizontal_alignment = 1
+
+[node name="ProjectSubtitle" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Real-time Face Detection & Mustache Overlay System"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Separator1" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+
+[node name="DescriptionTitle" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Deskripsi Proyek"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "Aplikasi ini merupakan sistem deteksi wajah real-time dengan overlay filter kumis yang dibangun menggunakan teknik Computer Vision klasik. Sistem ini menggunakan kombinasi algoritma Haar Cascade untuk deteksi wajah, ORB (Oriented FAST and Rotated BRIEF) untuk ekstraksi fitur, dan SVM (Support Vector Machine) untuk klasifikasi."
+autowrap_mode = 3
+
+[node name="Separator2" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+
+[node name="TechnologyTitle" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Teknologi yang Digunakan"
+
+[node name="TechStack" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Tech1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Haar Cascade Classifier - Deteksi wajah dan mata"
+autowrap_mode = 3
+
+[node name="Tech2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• ORB (Oriented FAST and Rotated BRIEF) - Ekstraksi fitur keypoint"
+autowrap_mode = 3
+
+[node name="Tech3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Bag of Visual Words (BoVW) - Representasi fitur visual"
+autowrap_mode = 3
+
+[node name="Tech4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Support Vector Machine (SVM) - Klasifikasi wajah"
+autowrap_mode = 3
+
+[node name="Tech5" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Python + OpenCV - Backend processing"
+autowrap_mode = 3
+
+[node name="Tech6" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• Godot Engine 4.x - Frontend interface"
+autowrap_mode = 3
+
+[node name="Tech7" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/TechStack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "• UDP Protocol - Real-time communication"
+autowrap_mode = 3
+
+[node name="Separator3" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+
+[node name="TeamTitle" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tim Pengembang"
+
+[node name="Team" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Info1" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/Team"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "Jizdan Mulkan Nailan (231524011)"
+autowrap_mode = 3
+
+[node name="Info2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/Team"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "Muhammad Aslim Salman (231524014)"
+autowrap_mode = 3
+
+[node name="Info3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent/Team"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "Muhammad Ichsan Rahmat R (231524015)"
+autowrap_mode = 3
+
+[node name="Separator4" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+
+[node name="TeamInfo" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/ContentMargin/AboutContent"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "STDev - D4 Teknik Informatika
+Politeknik Negeri Bandung
+2025"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TitleBar/BackButton" to="." method="_on_back_button_pressed"]
